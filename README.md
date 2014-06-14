@@ -1,4 +1,4 @@
-# find-assets
+# find-assets [![Build Status](https://travis-ci.org/callumlocke/find-assets.svg)](https://travis-ci.org/callumlocke/find-assets)
 
 Synchronous functions for finding asset references in HTML and CSS strings.
 
@@ -73,9 +73,11 @@ references === [
 ];
 ```
 
-The two scripts in the above example are grouped together in an array to indicate their sources could reasonably be concatenated and the elements replaced by a single element. Grouping will only occur for adjacent elements that are all scripts or all stylesheets, all with local, static URLs (no `?` or `#`). 'Adjacent' means the elements can only be separated by whitespace or comments. (A future version will also prevent the grouping of elements that have a conditional comment boundary between them.)
+The two scripts in the above example are grouped together in an array to indicate their sources could reasonably be concatenated and the elements replaced by a single element.
 
-You can also pass `false` as a second argument to `findAssets.html()` – this will prevent adjacent tags getting grouped together. References will still be returned in the same format (as an array of arrays), but the inner arrays will only be one item long. You can also optionally pass a number if you want to limit the group length to that number.
+Grouping will only occur for adjacent elements that are all scripts or all stylesheets, all with local, static URLs (no `?` or `#`). 'Adjacent' means the elements can only be separated by whitespace or comments. (A future version will also prevent the grouping of elements that have a conditional comment boundary between them.)
+
+You can also pass `false` as a second argument to `findAssets.html()` – this will prevent adjacent tags getting grouped together. References will still be returned in the same format (as an array of arrays), but the inner arrays will all have length 1. (You can alternatively pass a number if you want to limit groups to a particular length.)
 
 
 ### `findAssets.css()` – NOT YET IMPLEMENTED
