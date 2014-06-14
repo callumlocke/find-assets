@@ -1,0 +1,21 @@
+{
+  "name": "find-assets",
+  "version": "0.0.0",
+  "description": "Scans strings of HTML and CSS for asset references",
+  "author": "Callum Locke",
+  "license": "MIT",
+  "scripts": {
+    "test": "istanbul test _mocha --report html -- test/test.coffee --reporter spec --compilers coffee:coffee-script/register"
+  },
+  "dependencies": {
+    "htmlparser2": "~3.7.2"
+  },
+  "devDependencies": {
+    "chai": "~1.9.1",
+    "mocha": "~1.20.1",
+    "cson": "~1.6.0",
+    "istanbul": "~0.2.11",
+    "coffee-script": "~1.7.1",
+    "lodash": "~2.4.1"
+  }
+}
