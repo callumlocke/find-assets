@@ -8,14 +8,13 @@
     "test": "istanbul test _mocha --report html -- test/test.coffee --reporter spec --compilers coffee:coffee-script/register"
   },
   "dependencies": {
-    "htmlparser2": "~3.7.2"
+    "htmlparser2": "^3.7.3"
   },
   "devDependencies": {
-    "chai": "~1.9.1",
-    "mocha": "~1.20.1",
-    "cson": "~1.6.0",
-    "istanbul": "~0.2.11",
-    "coffee-script": "~1.7.1",
-    "lodash": "~2.4.1"
+    "chai": "^1.9.1",
+    "mocha": "^1.21.3",
+    "istanbul": "^0.3.0",
+    "coffee-script": "^1.7.1",
+    "lodash": "^2.4.1"
   }
 }

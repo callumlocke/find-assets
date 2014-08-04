@@ -1,0 +1,91 @@
+[
+  [
+    {
+      "type": "img",
+      "url": "../foo.jpg",
+      "start": 66,
+      "end": 88,
+      "string": "<img src=\"../foo.jpg\">"
+    }
+  ],
+  [
+    {
+      "type": "img",
+      "url": "bar.png",
+      "start": 104,
+      "end": 125,
+      "string": "<img src=\"bar.png\" />"
+    }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "scripts/x.js",
+      "start": 129,
+      "end": 165,
+      "string": "<script src=\"scripts/x.js\"></script>"
+    },
+    {
+      "type": "script",
+      "url": "scripts/y.js",
+      "start": 168,
+      "end": 204,
+      "string": "<script src=\"scripts/y.js\"></script>"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "/styles/thing.css",
+      "start": 208,
+      "end": 254,
+      "string": "<link rel=stylesheet href=\"/styles/thing.css\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "/styles/one.css",
+      "start": 265,
+      "end": 309,
+      "string": "<link rel=stylesheet href=\"/styles/one.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "/styles/two.css",
+      "start": 312,
+      "end": 356,
+      "string": "<link rel=stylesheet href=\"/styles/two.css\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "a.css",
+      "start": 400,
+      "end": 434,
+      "string": "<link rel=stylesheet href=\"a.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "b.css",
+      "start": 437,
+      "end": 471,
+      "string": "<link rel=stylesheet href=\"b.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "c.css",
+      "start": 521,
+      "end": 555,
+      "string": "<link rel=stylesheet href=\"c.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "d.css",
+      "start": 558,
+      "end": 603,
+      "string": "<link rel=\"stylesheet\" href=\"d.css\">\n\n</body>"
+    }
+  ]
+]
