@@ -149,6 +149,10 @@ module.exports = function (html, limit) {
       }
     },
 
+    oncomment: function (comment) {
+      if (currentReference) completeReference();
+    },
+
     onclosetag: function (tagName) {
       lastElementEndIndex = parser.endIndex + 1;
     },

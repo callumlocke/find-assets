@@ -84,8 +84,8 @@
       "type": "stylesheet",
       "url": "d.css",
       "start": 558,
-      "end": 603,
-      "string": "<link rel=\"stylesheet\" href=\"d.css\">\n\n</body>"
+      "end": 594,
+      "string": "<link rel=\"stylesheet\" href=\"d.css\">"
     }
   ]
 ]
