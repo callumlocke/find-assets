@@ -1,6 +1,6 @@
 {
   "name": "find-assets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Scans strings of HTML and CSS for asset references",
   "author": "Callum Locke",
   "license": "MIT",
