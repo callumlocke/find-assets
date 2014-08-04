@@ -38,6 +38,7 @@ var isWhitespace = function (str) {
   return true;
 }
 
+
 var urlAttribute = {
   script: 'src',
   link: 'href',
@@ -47,7 +48,7 @@ var urlAttribute = {
   track: 'src'
 };
 
-module.exports = function (html, limit) {
+module.exports = function findRefsInHTML(html, limit) {
 
   // process args
   if (typeof html !== 'string') throw new TypeError('First argument must be a string');
@@ -151,6 +152,34 @@ module.exports = function (html, limit) {
 
     oncomment: function (comment) {
       if (currentReference) completeReference();
+
+      var result = /^\[[^\]]+\]>/.exec(comment);
+
+      if (result) {
+        // this is an IE conditional comment (the actually-a-comment kind).
+        // this should always break up the current group (unlike simple comments)
+        if (currentGroup) finaliseGroup();
+
+        // find refs from inside the CC (which may themselves be grouped)
+        var ccOpenerLength = result[0].length;
+        var ccContents = comment.substring(ccOpenerLength, comment.length - 9);
+        var ccRefGroups = findRefsInHTML(ccContents, limit);
+        var ccContentsStart = parser.startIndex + 4 + ccOpenerLength; // 4 is for the "<!--"
+
+        // find any refs inside the CC, and add them to our array
+        ccRefGroups.forEach(function (group) {
+
+          // increase the indexes of each ref to get its position in the main doc
+          group.forEach(function (reference) {
+            reference.start += ccContentsStart;
+            reference.end += ccContentsStart;
+          });
+
+          groups.push({
+            references: group // this key necessary because of the .map() right at the end that undoes it
+          });
+        });
+      }
     },
 
     onclosetag: function (tagName) {

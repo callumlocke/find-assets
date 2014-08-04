@@ -75,7 +75,11 @@ references === [
 
 The two scripts in the above example are grouped together in an array to indicate their sources could reasonably be concatenated and the elements replaced by a single element.
 
-Grouping will only occur for adjacent elements that are all scripts or all stylesheets, all with local, static URLs (no `?` or `#`). 'Adjacent' means the elements can only be separated by whitespace or comments. (A future version will also prevent the grouping of elements that have a conditional comment boundary between them.)
+Grouping will only occur for **adjacent** elements that are all scripts or all stylesheets, all with local, static URLs (no `?` or `#`). The only things
+
+Elements are 'adjacent' if they have nothing of consequence between them. That means whitespace and *basic* (not conditional) comments are allowed in between adjacent elements. Anything else, and the elements aren't considered adjacent. The idea is: if you could concatenate the scripts/stylesheets within a group, and replace the whole set of adjacent elements with a single `script` or `link` tag pointing at a concatenated version, then anything that was between the elements will necessarily get lost. So only whitespace and basic comments are allowed.
+
+From v0.1, `findAssets.html()` looks inside **conditional comments** for references too. If same-type elements are adjacent inside a conditional comment, then those will be grouped just as if they were in the main document. But elements are never grouped together across a conditional comment boundary – i.e. elements immediately before or after a conditional comment will not be grouped together, nor will they be grouped with any elements found inside the conditional comment.
 
 You can also pass `false` as a second argument to `findAssets.html()` – this will prevent adjacent tags getting grouped together. References will still be returned in the same format (as an array of arrays), but the inner arrays will all have length 1. (You can alternatively pass a number if you want to limit groups to a particular length.)
 

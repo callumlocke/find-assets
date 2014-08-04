@@ -19,6 +19,5 @@ describe '.html()', ->
     expectedUngrouped = _.flatten(expected).map (ref) -> [ref]
     expect(references).to.deep.equal(expectedUngrouped)
 
-
 describe '.css()', ->
   it 'works'

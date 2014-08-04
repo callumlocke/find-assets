@@ -87,5 +87,46 @@
       "end": 594,
       "string": "<link rel=\"stylesheet\" href=\"d.css\">"
     }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "poly1.js",
+      "start": 620,
+      "end": 652,
+      "string": "<script src=\"poly1.js\"></script>"
+    },
+    {
+      "type": "script",
+      "url": "poly2.js",
+      "start": 657,
+      "end": 689,
+      "string": "<script src=\"poly2.js\"></script>"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "hax.css",
+      "start": 694,
+      "end": 730,
+      "string": "<link rel=stylesheet href=\"hax.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "hax2.css",
+      "start": 735,
+      "end": 772,
+      "string": "<link rel=stylesheet href=\"hax2.css\">"
+    }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "some-other-thing.js",
+      "start": 813,
+      "end": 856,
+      "string": "<script src=\"some-other-thing.js\"></script>"
+    }
   ]
 ]
