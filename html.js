@@ -132,7 +132,7 @@ module.exports = function (html, limit) {
       if (currentGroup) completeCurrentGroup();
     }
   });
-  
+
 
   // run the parser
   parser.write(html);
