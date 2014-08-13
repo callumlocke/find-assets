@@ -8,7 +8,9 @@ var isLocalURL = function (url) {
 };
 
 var isLocalScript = function (attrs) {
-  return ((attrs.type == null) || attrs.type === 'application/javascript') && isLocalURL(attrs.src);
+  return (
+    (attrs.type == null) || attrs.type === 'application/javascript'
+  ) && isLocalURL(attrs.src);
 };
 
 var isLocalStylesheet = function (attrs) {
@@ -36,17 +38,8 @@ var isWhitespace = function (str) {
     return false;
   }
   return true;
-}
-
-
-var urlAttribute = {
-  script: 'src',
-  link: 'href',
-  img: 'src',
-  source: 'src',
-  object: 'data',
-  track: 'src'
 };
+
 
 module.exports = function findRefsInHTML(html, limit) {
 
@@ -58,7 +51,8 @@ module.exports = function findRefsInHTML(html, limit) {
 
   // prepare to collect references in groups
   var groups = [];
-  var currentReference, currentGroup, lastElementEndIndex;
+  var currentReference, currentGroup, lastElementEndIndex,
+      currentOpenTagName;
 
   var completeReference = function () {
     currentReference.end = lastElementEndIndex;
@@ -75,6 +69,8 @@ module.exports = function findRefsInHTML(html, limit) {
 
   var parser = new htmlparser.Parser({
     onopentag: function (tagName, attrs) {
+      currentOpenTagName = tagName;
+
       if (currentReference) completeReference();
 
       if (isTagGroupable(tagName, attrs)) {
@@ -180,9 +176,18 @@ module.exports = function findRefsInHTML(html, limit) {
           });
         });
       }
+      else if (comment == '<![endif]') {
+        if (currentGroup) finaliseGroup();
+      }
     },
 
     onclosetag: function (tagName) {
+      // handle previous element being a void (eg the stylesheet just
+      // before </head> in test fixture)
+      if (currentReference && tagName !== currentOpenTagName)
+        completeReference();
+
+      currentOpenTagName = null;
       lastElementEndIndex = parser.endIndex + 1;
     },
 

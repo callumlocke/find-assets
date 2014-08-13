@@ -1,0 +1,182 @@
+[
+  [
+    {
+      "type": "stylesheet",
+      "url": "a1.css",
+      "start": 12,
+      "end": 49,
+      "string": "<link href=\"a1.css\" rel=\"stylesheet\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "a2.css",
+      "start": 54,
+      "end": 91,
+      "string": "<link href=\"a2.css\" rel=\"stylesheet\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "b.css",
+      "start": 117,
+      "end": 153,
+      "string": "<link href=\"b.css\" rel=\"stylesheet\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "c1",
+      "start": 179,
+      "end": 212,
+      "string": "<link href=\"c1\" rel=\"stylesheet\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "c2",
+      "start": 217,
+      "end": 250,
+      "string": "<link href=\"c2\" rel=\"stylesheet\">"
+    }
+  ],
+  [
+    {
+      "type": "img",
+      "url": "d.jpg",
+      "start": 269,
+      "end": 286,
+      "string": "<img src=\"d.jpg\">"
+    }
+  ],
+  [
+    {
+      "type": "img",
+      "url": "e.png",
+      "start": 289,
+      "end": 308,
+      "string": "<img src=\"e.png\" />"
+    }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "f1.js",
+      "start": 312,
+      "end": 341,
+      "string": "<script src=\"f1.js\"></script>"
+    },
+    {
+      "type": "script",
+      "url": "f2.js",
+      "start": 344,
+      "end": 373,
+      "string": "<script src=\"f2.js\"></script>"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "g.css",
+      "start": 377,
+      "end": 411,
+      "string": "<link rel=stylesheet href=\"g.css\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "h1.css",
+      "start": 450,
+      "end": 485,
+      "string": "<link rel=stylesheet href=\"h1.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "h2.css",
+      "start": 488,
+      "end": 523,
+      "string": "<link rel=stylesheet href=\"h2.css\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "j1.css",
+      "start": 540,
+      "end": 575,
+      "string": "<link rel=stylesheet href=\"j1.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "j2.css",
+      "start": 578,
+      "end": 611,
+      "string": "<link rel=stylesheet href=j2.css>"
+    },
+    {
+      "type": "stylesheet",
+      "url": "j3.css",
+      "start": 649,
+      "end": 684,
+      "string": "<link rel=stylesheet href=\"j3.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "j4.css",
+      "start": 687,
+      "end": 724,
+      "string": "<link rel=\"stylesheet\" href=\"j4.css\">"
+    }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "k1.js",
+      "start": 802,
+      "end": 831,
+      "string": "<script src=\"k1.js\"></script>"
+    },
+    {
+      "type": "script",
+      "url": "k2.js",
+      "start": 836,
+      "end": 865,
+      "string": "<script src=\"k2.js\"></script>"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "l1.css",
+      "start": 870,
+      "end": 905,
+      "string": "<link rel=stylesheet href=\"l1.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "l2.css",
+      "start": 910,
+      "end": 945,
+      "string": "<link rel=stylesheet href=\"l2.css\">"
+    }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "m.js",
+      "start": 981,
+      "end": 1009,
+      "string": "<script src=\"m.js\"></script>"
+    }
+  ],
+  [
+    {
+      "type": "script",
+      "url": "n.js",
+      "start": 1025,
+      "end": 1053,
+      "string": "<script src=\"n.js\"></script>"
+    }
+  ]
+]

@@ -1,4 +1,5 @@
 {
   "node": true,
-  "eqnull": true
+  "eqnull": true,
+  "unused": true
 }

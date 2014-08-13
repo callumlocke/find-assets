@@ -5,7 +5,7 @@
   "author": "Callum Locke",
   "license": "MIT",
   "scripts": {
-    "test": "istanbul test _mocha --report html -- test/test.coffee --reporter spec --compilers coffee:coffee-script/register"
+    "test": "jshint *.js && istanbul test _mocha --report html -- test/test.coffee --reporter spec --compilers coffee:coffee-script/register"
   },
   "dependencies": {
     "htmlparser2": "^3.7.3"
@@ -15,6 +15,7 @@
     "mocha": "^1.21.3",
     "istanbul": "^0.3.0",
     "coffee-script": "^1.7.1",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "jshint": "~2.5.2"
   }
 }
