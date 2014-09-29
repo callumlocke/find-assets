@@ -41,7 +41,7 @@ describe '.html()', ->
 
 
   it 'can disable grouping', ->
-    assetGroups = findAssets.html(html, false)
+    assetGroups = findAssets.html(html, 1)
 
     expectedUngrouped = _.flatten(expectedResults).map (ref) -> [ref]
     expect(assetGroups).to.deep.equal(expectedUngrouped)

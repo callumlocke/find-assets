@@ -29,11 +29,12 @@ var isWhitespace = function (str) {
   while (i--) {
     c = str.charCodeAt(i);
     switch (c) {
-      case 0x0009: case 0x000A: case 0x000B: case 0x000C: case 0x000D: case 0x0020:
-      case 0x0085: case 0x00A0: case 0x1680: case 0x180E: case 0x2000: case 0x2001:
-      case 0x2002: case 0x2003: case 0x2004: case 0x2005: case 0x2006: case 0x2007:
-      case 0x2008: case 0x2009: case 0x200A: case 0x2028: case 0x2029: case 0x202F:
-      case 0x205F: case 0x3000: continue;
+      case 0x0009: case 0x000A: case 0x000B: case 0x000C: case 0x000D:
+      case 0x0020: case 0x0085: case 0x00A0: case 0x1680: case 0x180E:
+      case 0x2000: case 0x2001: case 0x2002: case 0x2003: case 0x2004:
+      case 0x2005: case 0x2006: case 0x2007: case 0x2008: case 0x2009:
+      case 0x200A: case 0x2028: case 0x2029: case 0x202F: case 0x205F:
+      case 0x3000: continue;
     }
     return false;
   }
@@ -44,10 +45,11 @@ var isWhitespace = function (str) {
 module.exports = function findRefsInHTML(html, limit) {
 
   // process args
-  if (typeof html !== 'string') throw new TypeError('First argument must be a string');
-  if (limit == null || limit === true) limit = Infinity;
-  else if (!limit) limit = 1;
-  else if (typeof limit !== 'number') throw new TypeError('Unexpected type for 2nd argument');
+  if (typeof html !== 'string')
+    throw new TypeError('First argument must be a string');
+  if (limit == null) limit = Infinity;
+  if (typeof limit !== 'number')
+    throw new TypeError('2nd argument should be a number');
 
   // prepare to collect references in groups
   var groups = [];

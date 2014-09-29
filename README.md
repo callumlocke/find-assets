@@ -96,7 +96,15 @@ Elements are 'adjacent' if they are all the same type (either all scripts or all
 
 From v0.1, `findAssets.html()` looks inside **conditional comments** for references too. If same-type elements are adjacent inside a conditional comment, then those will be grouped just as if they were in the main document. But elements are never grouped together across a conditional comment boundary – i.e. elements immediately before or after a conditional comment will not be grouped together, nor will they be grouped with any elements found inside the conditional comment.
 
-You can also pass `false` as a second argument to `findAssets.html()` – this  disables grouping of adjacent assets. Results are still be returned in the same format (as an array of arrays), but the inner arrays will all have length 1. (You can alternatively pass a number as a second argument, instead of `false`, if you want to limit group sizes to that number.)
+#### disabling/limiting grouping
+
+You can limit groups to a particular size by passing a number as a second argument. For example, limiting to `1` effectively disables grouping.
+
+```js
+findAssets.html(str, 1);
+```
+
+(The default 2nd argument is `Infinity`.)
 
 
 ### `findAssets.css()` – NOT YET IMPLEMENTED
