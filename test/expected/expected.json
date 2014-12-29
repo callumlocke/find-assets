@@ -178,5 +178,39 @@
       "end": 1053,
       "string": "<script src=\"n.js\"></script>"
     }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "o.css",
+      "start": 1119,
+      "end": 1155,
+      "string": "<link rel=\"stylesheet\" href=\"o.css\">"
+    },
+    {
+      "type": "stylesheet",
+      "url": "p.css",
+      "start": 1158,
+      "end": 1194,
+      "string": "<link rel=\"stylesheet\" href=\"p.css\">"
+    }
+  ],
+  [
+    {
+      "type": "import",
+      "url": "q.html",
+      "start": 1197,
+      "end": 1230,
+      "string": "<link rel=\"import\" href=\"q.html\">"
+    }
+  ],
+  [
+    {
+      "type": "stylesheet",
+      "url": "r.css",
+      "start": 1233,
+      "end": 1269,
+      "string": "<link rel=\"stylesheet\" href=\"r.css\">"
+    }
   ]
 ]

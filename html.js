@@ -136,6 +136,19 @@ module.exports = function findRefsInHTML(html, limit) {
             };
           }
           break;
+         case 'link':
+         	if (attrs.rel === 'import' && attrs.href) {
+         		currentGroup = {
+              references: []
+              // no type necessary
+            };
+
+            currentReference = {
+              type: 'import',
+              url: attrs.href,
+              start: parser.startIndex
+            };
+         	}
         }
       }
     },

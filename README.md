@@ -1,12 +1,12 @@
 # find-assets
 
-Synchronous functions for finding asset references (scripts, stylesheets, images, etc.) in HTML ~~and CSS~~ strings. The returned data is designed to assist with concatenation and revving.
+Synchronous functions for finding asset references (scripts, stylesheets, images, etc.) in HTML ~~and CSS~~ strings. The returned data structure is designed to help you do things like concatenation and revving.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
-The module exports two functions: one for finding assets in HTML, and one for finding them in CSS (background images etc.).
+The module exports two functions: one for finding assets in HTML, and one for finding assets in CSS (background images etc.).
 
-In the `.html()` method, asset details are grouped to indicate that those assets are concatenatable (i.e. when adjacent scripts or stylesheets are found in an HTML string). It is up to you to concatenate them. Substring indexes are included so you can update your HTML to point to new concatenated files.
+In the `.html()` method, asset details are grouped to indicate that those assets are candidates for concatenation, i.e. whenever sets of adjacent `<script>` or `<link rel="stylesheet">` elements are found. (It is up to you to actually do the concatenating – substring indexes are included so you can update your HTML to point to new concatenated files.)
 
 
 ## usage
@@ -81,11 +81,11 @@ findAssets.html(str);
 
 #### the results
 
-The results are always an **array** of **arrays** of **objects**.
+The results are always returned as an **array** of **arrays** of **objects**.
 
 One object details one asset reference, such as a `script`, `img`, or `link`. The `string` is the whole element substring, and the `start` and `end` are indexes of that substring within the full HTML string.
 
-If an inner array contains more than one object, that means those assets could reasonably be concatenated, and the entire HTML substring (from the `start` of the first tag in the group to the `end` of the last one) could safely be replaced with a single `script` or `link` element pointing at a concatenated version of the assets. (It is up to you to concatenate the assets and update the HTML.)
+If an inner array contains more than one object, it means these assets could reasonably be concatenated, and the entire HTML substring (from the `start` of the first tag in the group to the `end` of the last one) could safely be replaced with a single `script` or `link` element pointing at a concatenated version of the assets. (It is up to you to concatenate the assets and update the HTML accordingly, using the information provided.)
 
 In the above example, you could concatenate the scripts `scripts/x.js` and `scripts/y.js` together, and replace the whole substring from `47` to `122` of the HTML with a single script tag pointing at the new concatenated version.
 
@@ -94,7 +94,7 @@ In the above example, you could concatenate the scripts `scripts/x.js` and `scri
 
 Elements are 'adjacent' if they are all the same type (either all scripts or all stylesheets) and they have nothing of consequence between them. That means only whitespace and *basic* comments (not conditional comments) are allowed between adjacent elements. Anything else, and the elements aren't considered adjacent. The idea is: if you could safely concatenate the scripts/stylesheets within a group, and replace the whole set of adjacent elements with a single `script` or `link` tag pointing at the concatenated result, without affecting how the page works (excepting contrived edge cases), then they are grouped together.
 
-From v0.1, `findAssets.html()` looks inside **conditional comments** for references too. If same-type elements are adjacent inside a conditional comment, then those will be grouped just as if they were in the main document. But elements are never grouped together across a conditional comment boundary – i.e. elements immediately before or after a conditional comment will not be grouped together, nor will they be grouped with any elements found inside the conditional comment.
+From v0.1, `findAssets.html()` looks inside **conditional comments** for references too. If same-type elements are adjacent inside a conditional comment, then those will be grouped just as if they were in the main document. But elements are never grouped together across a conditional comment boundary.
 
 #### disabling/limiting grouping
 
@@ -109,9 +109,7 @@ findAssets.html(str, 1);
 
 ### `findAssets.css()` – NOT YET IMPLEMENTED
 
-Given a string of CSS, `findAssets.css()` returns a list of objects representing all `url(...)` tokens found.
-
-CSS is simpler because nothing can be concatenated. (Spriting is outside the scope of this module.)
+Given a string of CSS, `findAssets.css()` returns an object for each `url(...)` token:
 
 ```css
 @font-face {
@@ -146,10 +144,10 @@ findAssets.css(str);
 ];
 ```
 
-For consistency with `findAssets.html()`, the results are returned 'grouped' in arrays, but these arrays always have length 1.
+For consistency with `findAssets.html()`, the results are returned as an array of arrays. But the inner arrays always have length 1, because CSS assets can't be concateanted. (Image spriting is outside the scope of this module.)
 
 
-## license
+## licence
 
 [The MIT License](http://opensource.org/licenses/MIT)
 

@@ -14,6 +14,7 @@ rewriteReferences = (html, assetGroups) ->
       when 'img' then ['<img src="', '">']
       when 'script' then ['<script src="', '"></script>']
       when 'stylesheet' then ['<link rel="stylesheet" href="', '">']
+      when 'import' then ['<link rel="import" href="', '">']
       else throw new TypeError "unexpected type: #{group[0].type}"
     url = group.map((asset) -> asset.url).join('_')
     newHTML += (
