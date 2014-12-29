@@ -1,21 +1,21 @@
 {
   "name": "find-assets",
-  "version": "0.3.0",
   "description": "Locates asset references in a string of HTML",
+  "version": "0.3.0",
   "author": "Callum Locke",
+  "dependencies": {
+    "htmlparser2": "~3.8.2"
+  },
+  "devDependencies": {
+    "chai": "~1.10.0",
+    "coffee-script": "~1.8.0",
+    "istanbul": "~0.3.5",
+    "jshint": "~2.5.11",
+    "lodash": "~2.4.1",
+    "mocha": "~2.1.0"
+  },
   "license": "MIT",
   "scripts": {
     "test": "jshint *.js && istanbul test _mocha --report html -- test/test.coffee --reporter spec --compilers coffee:coffee-script/register"
-  },
-  "dependencies": {
-    "htmlparser2": "~3.7.3"
-  },
-  "devDependencies": {
-    "chai": "~1.9.1",
-    "coffee-script": "~1.7.1",
-    "istanbul": "~0.3.2",
-    "jshint": "~2.5.6",
-    "lodash": "~2.4.1",
-    "mocha": "~1.21.4"
   }
 }
