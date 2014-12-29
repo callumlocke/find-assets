@@ -1,7 +1,7 @@
 {
   "name": "find-assets",
   "description": "Locates asset references in a string of HTML",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Callum Locke",
   "dependencies": {
     "htmlparser2": "~3.8.2"
