@@ -1,8 +1,6 @@
-# find-assets
+# find-assets [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 Synchronous functions for finding asset references (scripts, stylesheets, images, etc.) in HTML ~~and CSS~~ strings. The returned data structure is designed to help you do things like concatenation and revving.
-
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][depstat-image]][depstat-url]
 
 The module exports two functions: one for finding assets in HTML, and one for finding assets in CSS (background images etc.).
 
@@ -152,11 +150,12 @@ For consistency with `findAssets.html()`, the results are returned as an array o
 [The MIT License](http://opensource.org/licenses/MIT)
 
 
+<!-- badge URLs -->
 [npm-url]: https://npmjs.org/package/find-assets
-[npm-image]: https://badge.fury.io/js/find-assets.png
+[npm-image]: https://img.shields.io/npm/v/find-assets.svg?style=flat-square
 
 [travis-url]: http://travis-ci.org/callumlocke/find-assets
-[travis-image]: https://secure.travis-ci.org/callumlocke/find-assets.png?branch=master
+[travis-image]: https://img.shields.io/travis/callumlocke/find-assets.svg?style=flat-square
 
 [depstat-url]: https://david-dm.org/callumlocke/find-assets
-[depstat-image]: https://david-dm.org/callumlocke/find-assets.png
+[depstat-image]: https://img.shields.io/david/callumlocke/find-assets.svg?style=flat-square
